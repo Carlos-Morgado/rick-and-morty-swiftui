@@ -2,20 +2,14 @@
 //  ContentView.swift
 //  rick-and-morty-swift-ui
 //
-//  Created by Carlos Morgado on 23/10/23.
+//  Created by Carlos Morgado on 25/10/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 

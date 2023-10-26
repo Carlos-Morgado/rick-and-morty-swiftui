@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  rick-and-morty-swift-ui
+
+  Created by Carlos Morgado on 25/10/23.
+  
+*/
+
+// MARK: - CHARACTERS SCREEN
+
+"characters_screen_navigation_title" = "Characters";
+"character_location_label_title" = "Last known location:";
+"characters_network_error_alert_title" = "Error";
+"characters_network_error_alert_message" = "There was an error with the network";
+"characters_network_error_alert_button" = "Retry";
+"characters_table_view_refresh_control" = "Pull to refresh";
+"characters_searchbar_placeholder" = "Search character";
+
+// MARK: - CHARACTER DETAIL SCREEN
+
+"character-status-type-info" = "Status";
+"character-status-alive-value-info" = "Alive";
+"character-status-dead-value-info" = "Dead";
+"character-status-unknown-value-info" = "Unknown";
+"character-gender-type-info" = "Gender";
+"character-gender-male-value-info" = "Male";
+"character-gender-female-value-info" = "Female";
+"character-gender-genderless-value-info" = "Genderless";
+"character-gender-unknown-value-info" = "Unknown";
