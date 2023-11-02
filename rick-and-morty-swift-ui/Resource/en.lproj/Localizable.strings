@@ -9,6 +9,7 @@
 // MARK: - CHARACTERS SCREEN
 
 "characters_screen_navigation_title" = "Characters";
+"characters_screen_tabbar_title" = "Characters";
 "character_location_label_title" = "Last known location:";
 "characters_network_error_alert_title" = "Error";
 "characters_network_error_alert_message" = "There was an error with the network";
