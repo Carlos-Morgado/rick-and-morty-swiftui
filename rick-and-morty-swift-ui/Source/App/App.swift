@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct rick_and_morty_swift_uiApp: App {
+struct AppDelegate: App {
     var body: some Scene {
         WindowGroup {
-            TabBarViewController()
+            TabBarView()
         }
     }
 }
