@@ -21,7 +21,6 @@ struct CharactersView: View {
                         .listRowSeparatorTint(.clear)
                         .listRowInsets(.init(top: 15, leading: 15, bottom: 5, trailing: 15))
                         .listRowSeparator(.hidden)
-                        //.padding(.bottom, 20)
                 }
                 .navigationTitle("characters_screen_navigation_title".localized)
                 .toolbarBackground(Color.mainBackground ?? .black, for: .navigationBar)
