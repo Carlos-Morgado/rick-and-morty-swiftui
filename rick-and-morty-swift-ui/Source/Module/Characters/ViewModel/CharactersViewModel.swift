@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharactersViewModel: ObservableObject {
+final class CharactersViewModel: ObservableObject {
     @Published var characters: [CharacterModel] = []
     @Published var searchText = ""
     
@@ -17,11 +17,30 @@ class CharactersViewModel: ObservableObject {
         self.characterDataSource = characterDataSource
     }
     
+    @MainActor 
+    func onAppear() {
+        fetchCharacters()
+    }
+    
+    @MainActor 
+    func scrollDidEnd() {
+        fetchCharacters()
+    }
+    
     @MainActor
-    func fetchCharacters() {
+    func didSearch() {
+        characters = []
+        fetchCharacters(isNewSearch: true, name: searchText)
+    }
+}
+
+private extension CharactersViewModel {
+    @MainActor
+    func fetchCharacters(isNewSearch: Bool = false, name: String? = nil) {
         Task {
             do {
-                characters = try await characterDataSource.getCharacters()
+                let newCharacters = try await characterDataSource.getCharacters(isNewSearch: isNewSearch, name: name)
+                characters.append(contentsOf: newCharacters)
             } catch {
                 print("Error when obtaining characters: \(error)")
             }
@@ -29,4 +48,3 @@ class CharactersViewModel: ObservableObject {
         
     }
 }
-

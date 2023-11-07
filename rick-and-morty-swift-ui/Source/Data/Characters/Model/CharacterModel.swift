@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct CharacterModel: Decodable {
+struct CharacterModel: Decodable, Equatable {
+    static func == (lhs: CharacterModel, rhs: CharacterModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: Int
     let name: String
     let status: CharacterStatusModel
