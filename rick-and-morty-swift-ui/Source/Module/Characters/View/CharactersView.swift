@@ -17,6 +17,11 @@ struct CharactersView: View {
                 List{
                     ForEach(charactersViewModel.characters, id: \.id) { character in
                         CharactersCell(name: character.name, status: character.status.localizedText, species: character.species, location: character.location.name, image: character.image)
+                            .onAppear {
+                                if character == charactersViewModel.characters.last {
+                                    charactersViewModel.scrollDidEnd()
+                                }
+                            }
                     }.listRowBackground(Color.clear)
                         .listRowSeparatorTint(.clear)
                         .listRowInsets(.init(top: 15, leading: 15, bottom: 5, trailing: 15))
@@ -33,8 +38,11 @@ struct CharactersView: View {
         }
         
         .searchable(text: $charactersViewModel.searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: Text("characters_searchbar_placeholder".localized))
+        .onChange(of: charactersViewModel.searchText, { _, _ in
+            charactersViewModel.didSearch()
+        })
         .onAppear {
-            charactersViewModel.fetchCharacters()
+            charactersViewModel.onAppear()
             UISearchBar.appearance().tintColor = .mainGreen
             UISearchBar.appearance().searchTextField.textColor = .white
         }
