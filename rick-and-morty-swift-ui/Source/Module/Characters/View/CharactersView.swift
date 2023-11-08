@@ -8,6 +8,8 @@
 import SwiftUI
 import Kingfisher
 
+
+
 struct CharactersView: View {
     @StateObject private var charactersViewModel = CharactersViewModel()
     
@@ -16,13 +18,17 @@ struct CharactersView: View {
             VStack(alignment: .leading) {
                 List{
                     ForEach(charactersViewModel.characters, id: \.id) { character in
-                        CharactersCell(name: character.name, status: character.status.localizedText, species: character.species, location: character.location.name, image: character.image)
-                            .onAppear {
-                                if character == charactersViewModel.characters.last {
-                                    charactersViewModel.scrollDidEnd()
-                                }
+                        NavigationLink(destination: CharacterDetailView()) {
+                            CharactersCell(name: character.name, status: character.status.localizedText, species: character.species, location: character.location.name, image: character.image)
+                        }
+                        .onAppear {
+                            if character == charactersViewModel.characters.last {
+                                charactersViewModel.scrollDidEnd()
                             }
-                    }.listRowBackground(Color.clear)
+                        }
+                        .customNavigationLinkStyle()
+                    }
+                    .listRowBackground(Color.clear)
                         .listRowSeparatorTint(.clear)
                         .listRowInsets(.init(top: 15, leading: 15, bottom: 5, trailing: 15))
                         .listRowSeparator(.hidden)
@@ -49,6 +55,23 @@ struct CharactersView: View {
         
     }
 }
+
+// MARK: - EXTENSIONS
+
+struct CustomNavigationLinkStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.mainGreen.opacity(5.0)) // Changes the colour of the text and therefore of the arrow.
+    }
+}
+
+extension View {
+    func customNavigationLinkStyle() -> some View {
+        self.modifier(CustomNavigationLinkStyle())
+    }
+}
+
+
 
 #Preview {
     CharactersView()
