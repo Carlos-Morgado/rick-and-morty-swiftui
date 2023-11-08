@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C409D1B62AFB7E9500EE008E /* NavigationLinkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409D1B52AFB7E9500EE008E /* NavigationLinkStyle.swift */; };
 		C42800A52AFA7F0F00F96CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42800A42AFA7F0F00F96CA0 /* CharacterDetailView.swift */; };
 		C42800A72AFA7F1F00F96CA0 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42800A62AFA7F1F00F96CA0 /* CharacterDetailViewModel.swift */; };
 		C44D584C2AEEB2C100B6FEE9 /* CharacterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D584B2AEEB2C100B6FEE9 /* CharacterDataSource.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C409D1B52AFB7E9500EE008E /* NavigationLinkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkStyle.swift; sourceTree = "<group>"; };
 		C42800A42AFA7F0F00F96CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		C42800A62AFA7F1F00F96CA0 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		C44D584B2AEEB2C100B6FEE9 /* CharacterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataSource.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			children = (
 				C4DF46B12AE9490900C2D597 /* String+Localized.swift */,
 				C464A8522AEFEBB8009B1932 /* UIColor+Settings.swift */,
-				C409D1B52AFB7E9500EE008E /* NavigationLinkStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,7 +391,6 @@
 				C4A7CCE92AEA518A006257A1 /* NetworkHTTPMethod.swift in Sources */,
 				C4DF46A92AE944B800C2D597 /* CharacterStatusModel.swift in Sources */,
 				C4E1B0742AE67A9A00DB479A /* App.swift in Sources */,
-				C409D1B62AFB7E9500EE008E /* NavigationLinkStyle.swift in Sources */,
 				C44D584C2AEEB2C100B6FEE9 /* CharacterDataSource.swift in Sources */,
 				C4DF46A32AE9418900C2D597 /* CharactersView.swift in Sources */,
 				C4DF46BB2AE94D3A00C2D597 /* CharactersViewModel.swift in Sources */,
