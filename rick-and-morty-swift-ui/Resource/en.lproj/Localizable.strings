@@ -28,3 +28,9 @@
 "character-gender-female-value-info" = "Female";
 "character-gender-genderless-value-info" = "Genderless";
 "character-gender-unknown-value-info" = "Unknown";
+"character-type-type-info" = "Type";
+"character-species-type-info" = "Species";
+"character-origin-type-info" = "Origin";
+"character-location-type-info" = "Location";
+"character-created-type-info" = "Created";
+"character-episode-count-type-info" = "Episode count";
