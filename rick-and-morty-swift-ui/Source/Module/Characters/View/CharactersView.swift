@@ -8,17 +8,15 @@
 import SwiftUI
 import Kingfisher
 
-
-
 struct CharactersView: View {
-    @StateObject private var charactersViewModel = CharactersViewModel()
+    @StateObject var charactersViewModel: CharactersViewModel
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
                 List{
                     ForEach(charactersViewModel.characters, id: \.id) { character in
-                        NavigationLink(destination: CharacterDetailView()) {
+                        NavigationLink(destination: CharacterDetailView(characterDetailViewModel: CharacterDetailViewModel(character: character))) {
                             CharactersCell(name: character.name, status: character.status.localizedText, species: character.species, location: character.location.name, image: character.image)
                         }
                         .onAppear {
@@ -74,5 +72,5 @@ extension View {
 
 
 #Preview {
-    CharactersView()
+    CharactersView(charactersViewModel: CharactersViewModel())
 }

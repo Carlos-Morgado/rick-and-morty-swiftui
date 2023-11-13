@@ -6,16 +6,71 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CharacterDetailView: View {
+    @StateObject var characterDetailViewModel: CharacterDetailViewModel
+    
     var body: some View {
         VStack {
-            Text("Character Detail")
-                .background(Color.mainBlue)
+            KFImage(URL(string: characterDetailViewModel.character.image)!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 250)
+                .clipped()
+                    
+            VStack(spacing: 25) {
+                    VStack(spacing: 5) {
+                        Text("Name:")
+                            .font(.system(size: 18))
+                            .fontWeight(.black)
+                        .foregroundColor(Color.mainGreen)
+                        
+                        Text(characterDetailViewModel.character.name)
+                            .font(.system(size: 21))
+                            .fontWeight(.regular)
+                            .foregroundColor(Color.white)
+                    }
+                    
+                    VStack(spacing: 15) {
+                        Text("Character info:")
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.mainGreen)
+                        
+                        LazyVGrid(columns: [GridItem(spacing: 25), GridItem()], spacing: 10) {
+                            ForEach(CharacterTypeInfo.allCases, id: \.self) { infoType in
+                                CharaterDetailInfoCellView(titleInfo: infoType.localizedText , valueInfo: characterDetailViewModel.getInfoCellValue(infoType: infoType))
+                            }
+                        }
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                    }
+                    
+                    VStack(spacing: 12) {
+                        Text("Episodes:")
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.mainGreen)
+                        
+                        ScrollView(.horizontal) {
+                            LazyHGrid(rows: [GridItem()], spacing: 15) {
+                             // Show character episodes
+                            }
+                            .frame(height: 102)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                        }
+                    }
+            }.padding(.top, 10)
+            
+            Spacer()
         }
+        .navigationBarTitle(characterDetailViewModel.character.name, displayMode: .inline)
+        .background(Color.mainBackgroundColor)
     }
 }
 
 #Preview {
-    CharacterDetailView()
+    CharacterDetailView(characterDetailViewModel: CharacterDetailViewModel(character: CharacterModel(id: 0, name: "Name", status: CharacterStatusModel.alive, species: "Species", type: "Type", gender: CharacterGenderModel.female, origin: CharacterOriginModel(name: "Origin name", url: "Origin url"), location: CharacterLocationModel(name: "Location name", url: "Location url"), image: "https://lafrikileria.com/blog/wp-content/uploads/2023/06/series-parecidas-rick-morty.jpg", episode: [], url: "URL", created: "Created")))
 }

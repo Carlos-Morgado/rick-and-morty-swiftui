@@ -10,14 +10,14 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            CharactersView()
+            CharactersView(charactersViewModel: CharactersViewModel())
                 .tabItem {
                     Label("characters_screen_tabbar_title".localized, systemImage: "person.fill")
                 }
-                .toolbarBackground(Color.mainBackground ?? .black, for: .tabBar)
+                .toolbarBackground(Color.mainBackgroundColor, for: .tabBar)
                 .toolbar(.visible, for: .tabBar)
         }
-    }
+    }   
 }
 
 #Preview {
