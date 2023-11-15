@@ -14,25 +14,26 @@ struct CharacterEpisodesView: View {
     var airDate: String
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(episode)
-                    .font(.system(size: 15))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.mainGreen)
-                Text(name)
-                    .font(.system(size: 15))
-                    .italic()
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.white)
-                Text(airDate)
-                    .font(.system(size: 15))
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.white)
-            }.padding(.trailing, 10)
-                .padding(.leading, 10)
+        VStack(alignment: .leading, spacing: 5) {
+            Text(episode)
+                .font(.system(size: 15))
+                .fontWeight(.bold)
+                .foregroundColor(Color.mainGreen)
+                
+            Text(name)
+                .font(.system(size: 13))
+                .italic()
+                .fontWeight(.regular)
+                .foregroundColor(Color.white)
+                .fixedSize(horizontal: false, vertical: false)
+            
+            Text(airDate)
+                .font(.system(size: 13))
+                .fontWeight(.regular)
+                .foregroundColor(Color.mainBlueDEF)
         }
-        .frame(width: 180, height: 100)
+        .frame(width: 210, height: 90, alignment: .leading)
+        .padding(.leading, 15)
         .background(Color.secondaryBackgroundColor)
         .cornerRadius(7)
         .overlay(RoundedRectangle(cornerRadius: 7).stroke(Color.mainBlueDEF, lineWidth: 1))

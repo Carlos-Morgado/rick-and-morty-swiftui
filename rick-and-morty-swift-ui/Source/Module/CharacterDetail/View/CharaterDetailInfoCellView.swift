@@ -13,7 +13,7 @@ struct CharaterDetailInfoCellView: View {
     var valueInfo: String
     
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(alignment: .center, spacing: 2) {
             Text(titleInfo)
                 .font(.system(size: 12))
                 .fontWeight(.bold)
@@ -23,6 +23,7 @@ struct CharaterDetailInfoCellView: View {
                 .font(.system(size: 12))
                 .fontWeight(.medium)
                 .foregroundColor(Color.white)
+                .multilineTextAlignment(.center)
         }
         .frame(width: 180, height: 45)
         .background(Color.secondaryBackgroundColor)

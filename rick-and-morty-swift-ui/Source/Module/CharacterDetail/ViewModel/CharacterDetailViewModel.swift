@@ -9,6 +9,9 @@ import Foundation
 
 final class CharacterDetailViewModel: ObservableObject {
     @Published var character: CharacterModel
+    @Published var episodes: [EpisodeModel] = []
+    
+    private let episodesDataSource: EpisodesDataSource = DefaultEpisodesDataSource()
     
     static let apiToDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -28,9 +31,12 @@ final class CharacterDetailViewModel: ObservableObject {
     init(character: CharacterModel) {
         self.character = character
     }
-}
-
-extension CharacterDetailViewModel {
+    
+    @MainActor
+    func onAppear() {
+        fetchEpisodes()
+    }
+    
     func getInfoCellValue(infoType: CharacterTypeInfo) -> String {
         var value: String = ""
         switch infoType {
@@ -56,4 +62,23 @@ extension CharacterDetailViewModel {
         
         return value
     }
+}
+
+private extension CharacterDetailViewModel {
+    
+    @MainActor
+    func fetchEpisodes() {
+        for url in character.episode {
+            Task {
+                do {
+                    let episodeModel = try await episodesDataSource.getEpisodeDetail(urlString: url)
+                    episodes.append(episodeModel)
+                } catch {
+                    print("Error getting character episode: \(error)")
+                }
+            }
+            
+        }
+    }
+    
 }

@@ -16,12 +16,12 @@ struct CharacterDetailView: View {
             KFImage(URL(string: characterDetailViewModel.character.image)!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: 250)
+                .frame(height: 200)
                 .clipped()
                     
-            VStack(spacing: 25) {
+            VStack(spacing: 20) {
                     VStack(spacing: 5) {
-                        Text("Name:")
+                        Text("character_detail_name_title".localized)
                             .font(.system(size: 18))
                             .fontWeight(.black)
                         .foregroundColor(Color.mainGreen)
@@ -32,8 +32,8 @@ struct CharacterDetailView: View {
                             .foregroundColor(Color.white)
                     }
                     
-                    VStack(spacing: 15) {
-                        Text("Character info:")
+                    VStack(spacing: 10) {
+                        Text("caracter_detail_info_section_title".localized)
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                             .foregroundColor(Color.mainGreen)
@@ -47,15 +47,17 @@ struct CharacterDetailView: View {
                         .padding(.trailing, 20)
                     }
                     
-                    VStack(spacing: 12) {
-                        Text("Episodes:")
+                    VStack(spacing: 10) {
+                        Text("character_detail_episodes_section_title".localized)
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                             .foregroundColor(Color.mainGreen)
                         
                         ScrollView(.horizontal) {
                             LazyHGrid(rows: [GridItem()], spacing: 15) {
-                             // Show character episodes
+                                ForEach(characterDetailViewModel.episodes, id: \.id) { episode in
+                                    CharacterEpisodesView(episode: episode.episode, name: episode.name, airDate: episode.airDate)
+                                }
                             }
                             .frame(height: 102)
                             .padding(.leading, 10)
@@ -67,7 +69,14 @@ struct CharacterDetailView: View {
             Spacer()
         }
         .navigationBarTitle(characterDetailViewModel.character.name, displayMode: .inline)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.mainBackground ?? .black, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         .background(Color.mainBackgroundColor)
+        .onAppear {
+            characterDetailViewModel.onAppear()
+        }
     }
 }
 
