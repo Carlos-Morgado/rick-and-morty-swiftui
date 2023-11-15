@@ -34,3 +34,6 @@
 "character-location-type-info" = "Location";
 "character-created-type-info" = "Created";
 "character-episode-count-type-info" = "Episode count";
+"character_detail_name_title" = "Name:";
+"caracter_detail_info_section_title" = "Character info:";
+"character_detail_episodes_section_title" = "Episodes:";
