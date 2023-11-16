@@ -24,7 +24,7 @@ struct CharacterDetailView: View {
                         Text("character_detail_name_title".localized)
                             .font(.system(size: 18))
                             .fontWeight(.black)
-                        .foregroundColor(Color.mainGreen)
+                            .foregroundColor(Color.mainGreen)
                         
                         Text(characterDetailViewModel.character.name)
                             .font(.system(size: 21))

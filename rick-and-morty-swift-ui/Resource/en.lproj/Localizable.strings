@@ -37,3 +37,19 @@
 "character_detail_name_title" = "Name:";
 "caracter_detail_info_section_title" = "Character info:";
 "character_detail_episodes_section_title" = "Episodes:";
+
+// MARK: - EPISODES SCREEN
+
+"episodes_screen_navigation_title" = "Episodes";
+"episodes_searchbar_placeholder" = "Search episode";
+"episodes_screen_tabbar_title" = "Episodes";
+
+
+// MARK: - EPISODE DETAIL SCREEN
+
+"episode_name_type_info" = "Name";
+"episode_airDate_type_info" = "Air Date";
+"episode_episodeCode_type_info" = "Episode Code";
+"episode_detail_info_section_title" = "Episode info:";
+"episode_detail_characters_section_title" = "Characters:";
+

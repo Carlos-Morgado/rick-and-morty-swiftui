@@ -25,7 +25,6 @@ struct CharacterEpisodesView: View {
                 .italic()
                 .fontWeight(.regular)
                 .foregroundColor(Color.white)
-                .fixedSize(horizontal: false, vertical: false)
             
             Text(airDate)
                 .font(.system(size: 13))
