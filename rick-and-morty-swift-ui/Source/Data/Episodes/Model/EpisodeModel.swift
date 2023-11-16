@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct EpisodeModel: Decodable {
+struct EpisodeModel: Decodable, Equatable {
+    static func == (lhs: EpisodeModel, rhs: EpisodeModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: Int
     let name: String
     let airDate: String

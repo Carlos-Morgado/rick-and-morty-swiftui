@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum CharacterDataSourceError: Error {
+    case invalidUrl
+}
+
 protocol CharacterDataSource {
     func getCharacters(isNewSearch: Bool, name: String?) async throws -> [CharacterModel]
+    func getCharacterDetail(urlString: String) async throws -> CharacterModel
 }
 
 extension CharacterDataSource {
@@ -27,6 +32,7 @@ final class DefaultCharacterDataSource {
 }
 
 extension DefaultCharacterDataSource: CharacterDataSource {
+    
     func getCharacters(isNewSearch: Bool = false, name: String? = nil) async throws -> [CharacterModel] {
         do {
             if isNewSearch {
@@ -59,6 +65,18 @@ extension DefaultCharacterDataSource: CharacterDataSource {
             let allCharactersModel: AllCharactersModel = try await networkManager.execute(url: url, httpMethod: .get)
             self.paginationInfo = allCharactersModel.info
             return allCharactersModel.results
+        } catch {
+            throw error
+        }
+    }
+    
+    func getCharacterDetail(urlString: String) async throws -> CharacterModel {
+        do {
+            guard let characterDetailUrl = URL(string: urlString) else {
+                fatalError("Invalid URL")
+            }
+            let characterModel: CharacterModel = try await networkManager.execute(url: characterDetailUrl, httpMethod: .get)
+            return characterModel
         } catch {
             throw error
         }

@@ -16,6 +16,13 @@ struct TabBarView: View {
                 }
                 .toolbarBackground(Color.mainBackgroundColor, for: .tabBar)
                 .toolbar(.visible, for: .tabBar)
+            
+            EpisodesView(episodesViewModel: EpisodesViewModel())
+                .tabItem {
+                    Label("episodes_screen_tabbar_title".localized, systemImage: "tv")
+                }
+                .toolbarBackground(Color.mainBackgroundColor, for: .tabBar)
+                .toolbar(.visible, for: .tabBar)
         }
     }   
 }
