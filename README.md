@@ -93,10 +93,10 @@ This project uses Clean Architecture and is separated into four main layers:
 
 | Tool                                                                                                  | Used for                                                             |
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| VIPER                                                                                                 | Architectural design pattern for separating the logic form the views |
-| UIKit                                                                                                 | Framework used to build apps                                         |
+| MVVM                                                                                                  | Architectural design pattern for separating the logic form the views |
+| SwiftUI                                                                                               | Framework used to build apps                                         |
 | Kingfisher                                                                                            | Library for downloading and caching images from the web.             |
-| Cocoapods                                                                                             | Dependency manager                                                   |
+| Swift Package Manager                                                                                 | Dependency manager                                                   |
 
 ## Development Environment
 * Xcode 15.0
