@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct EpisodeCharactersView: View {
+struct CharactersSectionView: View {
     
     var name: String
     var status: String
@@ -30,17 +30,18 @@ struct EpisodeCharactersView: View {
                     .foregroundColor(Color.mainGreen)
                 
                 Text(status)
-                    .font(.system(size: 13))
+                    .font(.system(size: 15))
                     .italic()
                     .fontWeight(.regular)
                     .foregroundColor(Color.white)
             }
+            .padding(.top, 20)
             .padding(.leading, 15)
             .frame(width: 210, height: 40, alignment: .leading)
             
             Spacer()
         }
-        .frame(width: 210, height: 220, alignment: .leading)
+        .frame(width: 210, height: 250, alignment: .leading)
         .background(Color.secondaryBackgroundColor)
         .cornerRadius(7)
         .overlay(RoundedRectangle(cornerRadius: 7).stroke(Color.mainBlueDEF, lineWidth: 1))
@@ -48,5 +49,5 @@ struct EpisodeCharactersView: View {
 }
 
 #Preview {
-    EpisodeCharactersView(name: "Name", status: "Status", image: "Image")
+    CharactersSectionView(name: "Name", status: "Status", image: "Image")
 }
