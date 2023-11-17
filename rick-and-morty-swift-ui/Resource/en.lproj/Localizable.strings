@@ -53,3 +53,16 @@
 "episode_detail_info_section_title" = "Episode info:";
 "episode_detail_characters_section_title" = "Characters:";
 
+// MARK: - LOCATIONS SCREEN
+
+"locations_screen_navigation_title" = "Locations";
+"locations_searchbar_placeholder" = "Search location:";
+"locations_screen_tabbar_title" = "Locations";
+
+// MARK: - LOCATION DETAIL SCREEN
+
+"location_name_type_info" = "Name";
+"location_type_type_info" = "Type";
+"location_dimension_type_info" = "Dimension";
+"location_detail_info_section_title" = "Location info";
+"location_detail_residents_section_title" = "Residents";

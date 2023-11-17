@@ -23,8 +23,15 @@ struct TabBarView: View {
                 }
                 .toolbarBackground(Color.mainBackgroundColor, for: .tabBar)
                 .toolbar(.visible, for: .tabBar)
+            
+            LocationsView(locationsViewModel: LocationsViewModel())
+                .tabItem {
+                    Label("locations_screen_tabbar_title".localized, systemImage: "globe")
+                }
+                .toolbarBackground(Color.mainBackgroundColor, for: .tabBar)
+                .toolbar(.visible, for: .tabBar)
         }
-    }   
+    }
 }
 
 #Preview {

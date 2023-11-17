@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EpisodeDetailInfoCellView: View {
+struct DetailInfoCellView: View {
     var titleInfo: String
     var valueInfo: String
     
@@ -34,5 +34,5 @@ struct EpisodeDetailInfoCellView: View {
 }
 
 #Preview {
-    EpisodeDetailInfoCellView(titleInfo: "Title Info", valueInfo: "Value Info")
+    DetailInfoCellView(titleInfo: "Title Info", valueInfo: "Value Info")
 }
