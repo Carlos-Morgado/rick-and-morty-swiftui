@@ -46,6 +46,7 @@ private extension LocationDetailViewModel {
                 do {
                     let characterModel = try await charactersDataSource.getCharacterDetail(urlString: url)
                     residents.append(characterModel)
+                    residents.sort {$0.id < $1.id}
                 } catch {
                     print("Error getting character episode: \(error)")
                 }
