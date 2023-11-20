@@ -43,7 +43,7 @@ This project uses Model-View-ViewModel Architecture and is separated into four m
 ## Architecture Scheme
   
 <p align="center">
-  <img width="1920" src="https://github.com/Carlos-Morgado/rick-and-morty-ios/assets/122310905/09b834aa-7579-4d65-b19d-1283685c1b7a">
+  <img width="1920" src="https://github.com/Carlos-Morgado/rick-and-morty-swiftui/assets/122310905/4d4f08a2-ec43-4725-898b-6119a4b411ca">
 </p>
 
 ## Folder Structure
@@ -54,7 +54,7 @@ This project uses Model-View-ViewModel Architecture and is separated into four m
 ┗ 📂Source
   ┣ 📂App
   ┣ 📂Core
-  ┣ 📂Module
+  ┣ 📂Presentation
   ┃ ┣ 📂TabBar
   ┃ ┣ 📂Characters
   ┃ ┃ ┣ 📂View
