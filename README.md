@@ -5,12 +5,10 @@
 > ##### If you like this project, support it by "★ Star" in the repository. Thank you!
 
 <p align="center">
-<br>
+
 Rick&Morty is an American television series that narrates the adventures of Rick, a peculiar and crazy genius; and Morty, his shy and not very smart grandson. This application tries to show all the different contents of this TV show. You can search through hundreds of characters, episodes, and discover all the planets that create this universe.
- <br>
- <br>
-This application was created with the aim of learning new skills of the iOS development environment, such as the VIPER architecture, UIKit framework, Cocoapods... and more.
-<br>
+
+El objetivo de esta aplicación es comparar las diferencias con respecto a la aplicación [Rick&Morty UIKit Version](https://github.com/Carlos-Morgado/rick-and-morty-ios), cuyo patrón de diseño es VIPER y utiliza el framework UIKit. En esta ocasión se ha utilizado la arquitectura MVVM y el framework SwiftUI.
 </p>
 
 <!-- TOC -->
@@ -100,3 +98,6 @@ This project uses Clean Architecture and is separated into four main layers:
 
 ## Development Environment
 * Xcode 15.0
+
+## Author
+* [**Carlos Morgado**](https://www.linkedin.com/in/carlos-morgado-alarcon/)
