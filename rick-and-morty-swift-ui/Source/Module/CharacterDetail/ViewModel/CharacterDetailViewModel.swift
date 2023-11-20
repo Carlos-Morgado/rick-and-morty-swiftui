@@ -73,6 +73,7 @@ private extension CharacterDetailViewModel {
                 do {
                     let episodeModel = try await episodesDataSource.getEpisodeDetail(urlString: url)
                     episodes.append(episodeModel)
+                    episodes.sort {$0.id < $1.id}
                 } catch {
                     print("Error getting character episode: \(error)")
                 }
