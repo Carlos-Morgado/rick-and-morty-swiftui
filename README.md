@@ -8,7 +8,7 @@
 
 Rick&Morty is an American television series that narrates the adventures of Rick, a peculiar and crazy genius; and Morty, his shy and not very smart grandson. This application tries to show all the different contents of this TV show. You can search through hundreds of characters, episodes, and discover all the planets that create this universe.
 
-El objetivo de esta aplicación es comparar las diferencias con respecto a la aplicación [Rick&Morty UIKit Version](https://github.com/Carlos-Morgado/rick-and-morty-ios), cuyo patrón de diseño es VIPER y utiliza el framework UIKit. En esta ocasión se ha utilizado la arquitectura MVVM y el framework SwiftUI.
+The aim of this application is to compare the differences with the application [Rick&Morty UIKit Version](https://github.com/Carlos-Morgado/rick-and-morty-ios), whose design pattern is VIPER and uses the UIKit framework. On this occasion, the MVVM architecture and the SwiftUI framework have been used.
 </p>
 
 <!-- TOC -->
@@ -31,15 +31,14 @@ El objetivo de esta aplicación es comparar las diferencias con respecto a la ap
 
 ## Architecture Design
 
-This project uses Clean Architecture and is separated into four main layers:
+This project uses Model-View-ViewModel Architecture and is separated into four main layers:
 
-* **Data**: In this folder are the **(DTO)** data models, which are the object representation of the JSON request, and the **Data Source**, which is in charge of the data request to obtain the characters, episodes, or locations. 
-* **Domain**: The information obtained by the DataSource goes to the Interactor, whose mission is to pass this information to the presenter. Also, this is where the business logic takes place.
-* **Module**: Inside this layer we find 3 fundamental pieces in the development of the architecture:
-  * The **Presenter** is the most important component of VIPER next to the interactor as it acts as a bridge between the VIPER modules and contains the presentation logic. It receives events from the view and reacts to them by requesting the necessary data from the interactor. In the opposite direction it receives the data from the interactor, applies the logic and prepares the content to be passed to the view for display.
-  * The **Router** links and creates the different modules of the application, and also has the task of navigating between views. It must implement a protocol that includes all the navigation possibilities between modules.
-  * The **View** is a ViewController that contains programmatically implemented sub-views. The view has the responsibility of displaying in the interface the information coming from the presenter and collecting events from the user by delegating them to the presenter.
 * **Core**: Contains the common code between the other layers, like extensions, reusable views for all the aplications, and managers. These are abstractions of important parts used in the app, such as making network requests.
+* **Data**: The "data" folder represents the data and business logic of the app. Inside this folder we find the following components:
+  * The **DataSource** is responsible for obtaining the data used in the application and passing it to the ViewModel.
+  * The **Model** are the data models (DTO), which are the object representation of the JSON request.
+* **ViewModel**: The ViewModel is the mediator between the View and the Data layer. It is in charge of connecting these two components but in a special way. On the one hand it feeds the view with the information coming from the Data Source. On the other hand, it is in charge of receiving actions from the View, and these actions can stay in the ViewModel or can be passed to the Data Source.
+* **View**: The view is the visual representation of the information coming from the ViewModel. And it has a double function, on the one hand it is in charge of launching actions to the ViewModel and on the other hand it is in charge of listening for changes in some of the properties of the ViewModel.
 
 ## Architecture Scheme
   
