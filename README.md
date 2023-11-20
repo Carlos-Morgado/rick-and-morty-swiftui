@@ -52,40 +52,39 @@ This project uses Model-View-ViewModel Architecture and is separated into four m
 📦rick-and-morty
 ┣ 📂Resource
 ┗ 📂Source
-  ┣ 📂AppDelegate
+  ┣ 📂App
   ┣ 📂Core
-  ┣ 📂Presentation
-  ┃ ┣ 📂Splash
+  ┣ 📂Module
   ┃ ┣ 📂TabBar
   ┃ ┣ 📂Characters
+  ┃ ┃ ┣ 📂View
+  ┃ ┃ ┗ 📂ViewModel
   ┃ ┣ 📂CharacterDetail
+  ┃ ┃ ┣ 📂View
+  ┃ ┃ ┗ 📂ViewModel
   ┃ ┣ 📂Episodes
+  ┃ ┃ ┣ 📂View
+  ┃ ┃ ┗ 📂ViewModel
   ┃ ┣ 📂EpisodeDetail
+  ┃ ┃ ┣ 📂View
+  ┃ ┃ ┗ 📂ViewModel
   ┃ ┣ 📂Locations
+  ┃ ┃ ┣ 📂View
+  ┃ ┃ ┗ 📂ViewModel
   ┃ ┗ 📂LocationsDetail
-  ┣ 📂Domain
-  ┃ ┣ 📂GetCharacters
-  ┃ ┃ ┣ 📂Interactor
-  ┃ ┣ 📂GetCharacterDetail
-  ┃ ┃ ┣ 📂Interactor
-  ┃ ┣ 📂GetEpisodes
-  ┃ ┃ ┣ 📂Interactor
-  ┃ ┣ 📂GetEpisodeDetail
-  ┃ ┃ ┣ 📂Interactor
-  ┃ ┗ 📂GetLocations
-  ┃   ┗ 📂Interactor
+  ┃   ┣ 📂View
+  ┃   ┗ 📂ViewModel
   ┗ 📂Data
     ┣ 📂Characters
     ┃ ┣ 📂DataSource
-    ┃ ┗ 📂DTO
+    ┃ ┗ 📂Model
     ┣ 📂Episodes
     ┃ ┣ 📂DataSource
-    ┃ ┗ 📂DTO
+    ┃ ┗ 📂Model
     ┗ 📂Locations
       ┣ 📂DataSource
-      ┗ 📂DTO
+      ┗ 📂Model
 ```
-
 ## Tools & Frameworks Used
 
 | Tool                                                                                                  | Used for                                                             |
