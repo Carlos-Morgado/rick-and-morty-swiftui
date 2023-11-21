@@ -91,7 +91,7 @@ This project uses Model-View-ViewModel Architecture and is separated into four m
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | MVVM                                                                                                  | Architectural design pattern for separating the logic form the views |
 | SwiftUI                                                                                               | Framework used to build apps                                         |
-| Kingfisher                                                                                            | Library for downloading and caching images from the web.             |
+| Kingfisher                                                                                            | Library for downloading and caching images from the web              |
 | Swift Package Manager                                                                                 | Dependency manager                                                   |
 
 ## Development Environment
