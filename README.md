@@ -31,7 +31,7 @@ The aim of this application is to compare the differences with the application [
 
 ## Architecture Design
 
-This project uses Model-View-ViewModel Architecture and is separated into four main layers:
+This project uses Model-View-ViewModel architecture and is separated into four main layers:
 
 * **Core**: Contains the common code between the other layers, like extensions, reusable views for all the aplications, and managers. These are abstractions of important parts used in the app, such as making network requests.
 * **Data**: The "data" folder represents the data and business logic of the app. Inside this folder we find the following components:
